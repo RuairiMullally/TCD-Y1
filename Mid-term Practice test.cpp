@@ -36,7 +36,13 @@ int main(){
 
             gradeAverage = gradeTotal/8;
             string grade = grade_finder(failureflag, gradeAverage);
-            bestStudent = best_student(studentID, gradeAverage);
+            //bestStudent = best_student(studentID, gradeAverage);
+
+            if(gradeAverage > previousBest){
+                previousBest = gradeAverage;
+                bestStudent = studentID;
+            }
+
 
             cout << " Average: " << gradeAverage << " Grade: " << grade << endl;
 
@@ -66,10 +72,10 @@ string grade_finder(bool failureflag, int gradeAverage){
     else return "F";
 }
 
-string best_student(string studentID, int gradeAverage){
+/*string best_student(string studentID, int gradeAverage){
 
 
     if(gradeAverage > previousBest)
         previousBest = gradeAverage;
         return studentID;
-}
+}*/
